@@ -1,14 +1,21 @@
-const removeFromArray = function(stuff) {
-    let array = Array.from(stuff);
-    for (i = 1; i < array.length; i++) {
-        let comp = array[i];
-        for (j = 0; j < array[0].length; i++) {
-            if (comp == array[j]) {
-
-            }
-        }
-    }
+const removeFromArray = function(...args) {
+    const array = args[0];
+    const newArray = [];
+    array.forEach((item) => {
+        if(!args.includes(item)) { 
+            newArray.push(item);
+        };
+    });
+    return newArray;
     
+    // from the solution: "A simpler, but more advanced way to do it is to use the 'filter' function,
+    // which basically does what we did with the forEach above.
+
+    // var removeFromArray = function(...args) {
+    //   const array = args[0]
+    //   return array.filter(val => !args.includes(val))
+    // }
+    //"
 };
 
 // Do not edit below this line
